@@ -9,6 +9,8 @@ import logging
 import sys
 from pathlib import Path
 
+from src.game import Game
+
 
 def main():
     """Main driver of the Cube Conundrum project."""
@@ -33,6 +35,12 @@ def main():
     if not args.txt_file.exists() or not args.txt_file.is_file():
         print("Non-existent text file passed, ending program.")
         sys.exit(-1)
+    logging.debug("Accepting input from %s", args.txt_file)
+
+    with open(args.txt_file, "r", encoding="utf-8") as file:
+        for line in file:
+            game_data = line
+            logging.debug("%s", game_data)
 
 
 if __name__ == "__main__":
