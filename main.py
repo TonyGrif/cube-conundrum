@@ -27,6 +27,25 @@ def main():
     )
     parser.add_argument("txt_file", type=Path, help="Text file to parse.")
 
+    parser.add_argument(
+        "--red",
+        type=int,
+        help="The number of acceptable red cubes for each game.",
+        default=12,
+    )
+    parser.add_argument(
+        "--green",
+        type=int,
+        help="The number of acceptable green cubes for each game.",
+        default=13,
+    )
+    parser.add_argument(
+        "--blue",
+        type=int,
+        help="The number of acceptable blue cubes for each game.",
+        default=14,
+    )
+
     args = parser.parse_args()
 
     if args.debug is True:
@@ -36,6 +55,9 @@ def main():
         print("Non-existent text file passed, ending program.")
         sys.exit(-1)
     logging.debug("Accepting input from %s", args.txt_file)
+    logging.debug(
+        "Accepting rgb values of: %s, %s, %s", args.red, args.green, args.blue
+    )
 
     with open(args.txt_file, "r", encoding="utf-8") as file:
         for line in file:
