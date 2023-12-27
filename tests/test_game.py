@@ -1,6 +1,7 @@
 import pytest
 from src.game import Turn, Game
 
+
 class TestGameClass:
     def test_turn(self):
         turn = Turn(3, 3, 3)
@@ -14,4 +15,8 @@ class TestGameClass:
         assert turn.blue == 14
 
     def test_game(self):
-        pass
+        game = Game(1)
+        assert game.identification == 1
+
+        game = Game(77)
+        assert game.identification == 77

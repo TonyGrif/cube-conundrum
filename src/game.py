@@ -23,9 +23,33 @@ class Game:
     """Game class for storing game data.
 
     Attributes:
-
+        identification (int): The id of a game.
     """
 
-    def __init__(self):
-        """Constructor for the game class."""
-        pass
+    def __init__(self, id_num: int) -> None:
+        """Constructor for the game class.
+
+        Parameters:
+            id_num (int): The id of this game.
+        """
+        self.identification = id_num
+
+    @property
+    def identification(self) -> int:
+        """
+        Return the identification of this game.
+
+        Returns:
+            identification (int): The identification number.
+        """
+        return self._identification
+
+    @identification.setter
+    def identification(self, id_num: int) -> None:
+        """
+        Set the id number of this Game.
+
+        Parameters:
+            identification (int): The id of this game.
+        """
+        self._identification = id_num
