@@ -44,3 +44,6 @@ class TestGameClass:
         assert not game.is_possible(20, 15, 20)
         assert not game.is_possible(20, 20, 8)
         assert game.is_possible(4, 16, 9)
+
+    def test_min_allowed(self, game):
+        assert game.min_allowed() == (4, 16, 9)
