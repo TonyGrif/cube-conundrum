@@ -106,3 +106,28 @@ class Game:
 
         logging.debug("Turn created with rgb(%s, %s, %s)", red, green, blue)
         return Turn(int(red), int(green), int(blue))
+
+    def is_possible(self, red: int, green: int, blue: int) -> bool:
+        """
+        Determine if this game and sequence of turns was valid based on
+        the number of cubes available for any given turn.
+
+        Parameters:
+            red (int): The max number of red cubes.
+            green (int): The max number of green cubes.
+            blue (int): The max number of blue cubes.
+
+        Returns:
+            True if this game was possible, False otherwise.
+        """
+        for turn in self.turns:
+            if turn.red > red:
+                return False
+
+            if turn.blue > blue:
+                return False
+
+            if turn.green > green:
+                return False
+
+        return True
