@@ -60,13 +60,18 @@ def main():
     )
 
     summation = 0
+    power_summation = 0
     with open(args.txt_file, "r", encoding="utf-8") as file:
         for line in file:
             game = Game(line)
             if game.is_possible(args.red, args.green, args.blue):
                 summation += game.identification
 
+            minimums = game.min_allowed()
+            power_summation += minimums[0] * minimums[1] * minimums[2]
+
     print(f"The resulting summation is {summation}")
+    print(f"The resulting power summation is {power_summation}")
 
 
 if __name__ == "__main__":
