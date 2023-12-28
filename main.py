@@ -66,7 +66,7 @@ def main():
             if game.is_possible(args.red, args.green, args.blue):
                 summation += game.identification
 
-    print(f"The resulting summations is {summation}")
+    print(f"The resulting summation is {summation}")
 
 
 if __name__ == "__main__":
