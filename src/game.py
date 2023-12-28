@@ -131,3 +131,18 @@ class Game:
                 return False
 
         return True
+
+    def min_allowed(self) -> Tuple[int, int, int]:
+        """
+        Determine the minimum number of each type of cube that could
+        still make this game possible for each turn.
+
+        Returns:
+            Tuple containing the minimum number of (red, green, blue)
+            cubes possible.
+        """
+        red = max(turn.red for turn in self.turns)
+        green = max(turn.green for turn in self.turns)
+        blue = max(turn.blue for turn in self.turns)
+
+        return (red, green, blue)
