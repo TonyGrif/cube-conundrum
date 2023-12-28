@@ -61,8 +61,7 @@ def main():
 
     with open(args.txt_file, "r", encoding="utf-8") as file:
         for line in file:
-            game_data = line
-            logging.debug("%s", game_data)
+            game = Game(line)
 
 
 if __name__ == "__main__":
