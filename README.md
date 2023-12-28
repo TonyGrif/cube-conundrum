@@ -17,7 +17,12 @@ Instructions can be found from the command line by running `./main.py -h`.
 
 ## Sample Execution
 When this program is run with `./main.py resources/input.txt`, the following 
-output is generated: `The resulting summation is 2105`.
+output is generated: 
+```
+The resulting summation is 2105
+The resulting multiplication is 72422
+```
 
 ## Prompt Answers
 The answer for part one is **2105**.
+The answer for part two is **72422**.

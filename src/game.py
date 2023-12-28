@@ -120,15 +120,14 @@ class Game:
         Returns:
             True if this game was possible, False otherwise.
         """
-        for turn in self.turns:
-            if turn.red > red:
-                return False
+        if max(turn.red for turn in self.turns) > red: 
+            return False
 
-            if turn.blue > blue:
-                return False
+        if max(turn.green for turn in self.turns) > green:
+            return False
 
-            if turn.green > green:
-                return False
+        if max(turn.blue for turn in self.turns) > blue:
+            return False
 
         return True
 
